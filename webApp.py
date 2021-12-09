@@ -14,6 +14,7 @@ st.set_page_config(
 tickerInput = st.sidebar.text_input(label="Ticker", placeholder="SPY")
 if not tickerInput:
     tickerInput = "SPY"
+tickerInput = tickerInput.upper()
     
 # Technical Analysis indicator selection
 taInput = st.sidebar.selectbox(label="Technical Analysis", options=["MA", "EMA", "MACD", "MA Cross Over"])
