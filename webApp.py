@@ -43,11 +43,14 @@ submitButton = form.form_submit_button(label="Run")
 st.title(taInput + " - " + tickerInput)
 
 # Logic for charting based on user selection
-if taInput == 'MA':
-    chart = tm.TradingMethods(tickerInput).ma(window=windowInput, delta=deltaInput)
-elif taInput == 'EMA':
-    chart = tm.TradingMethods(tickerInput).ema(window=windowInput, delta=deltaInput)
-elif taInput == 'MACD':
-    chart = tm.TradingMethods(tickerInput).macd(delta=deltaInput, ema1=ema1Input, ema2=ema2Input, signal=signalInput)
-elif taInput == 'MA Cross Over':
-    chart = tm.TradingMethods(tickerInput).crossOver(delta=deltaInput, slow=maSlowInput, fast=maFastInput)
+try:
+    if taInput == 'MA':
+        chart = tm.TradingMethods(tickerInput).ma(window=windowInput, delta=deltaInput)
+    elif taInput == 'EMA':
+        chart = tm.TradingMethods(tickerInput).ema(window=windowInput, delta=deltaInput)
+    elif taInput == 'MACD':
+        chart = tm.TradingMethods(tickerInput).macd(delta=deltaInput, ema1=ema1Input, ema2=ema2Input, signal=signalInput)
+    elif taInput == 'MA Cross Over':
+        chart = tm.TradingMethods(tickerInput).crossOver(delta=deltaInput, slow=maSlowInput, fast=maFastInput)
+except:
+    st.title("Error: please enter a valid ticker value or data selection")

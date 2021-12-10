@@ -34,7 +34,9 @@ The main challenge of this project was finding and using an appropriate framewor
 The official documentations of the Streamlit, Alpaca, and numpy APIs were extensively used. The Streamlit documentation greatly helped in the formulation of the web app elements and implementation of the logic. The Alpaca Markets API and documentation was used in order to pull market data. Finally, the third resource was used to assist in the creation of moving average plots from stock data.
 
 https://docs.streamlit.io/ 
+
 https://alpaca.markets/docs/
+
 https://www.datacamp.com/community/tutorials/moving-averages-in-pandas
 
 # Description of Files
