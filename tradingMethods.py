@@ -7,6 +7,7 @@ class TradingMethods():
     def __init__(self, ticker):
         self.ticker = ticker
         
+        
     def ma(self, delta=365, window=1):
         """Simple Moving Average
         ### Parameters 
@@ -23,12 +24,12 @@ class TradingMethods():
         data['close'].plot(ax=ax, alpha=0.9, color='royalblue')
         st.pyplot(fig)
         
-    # Exponential Moving Average
+        
     def ema(self, delta=365, window=1):
         """Exponential Moving Average
         ### Parameters 
         delta: days in past to get ticker data
-        window: MA widow period days
+        window: EMA widow period days
         ### Output
         Displays a streamlab matplotlib plot
         """
@@ -47,6 +48,7 @@ class TradingMethods():
         delta: days in past to get ticker data
         ema1: fast EMA period
         ema2: slow EMA period
+        signal: signal MA
         ### Output
         Displays a streamlab matplotlib plot
         """
@@ -62,13 +64,14 @@ class TradingMethods():
         ax[1].axhline(color='black')
         ax[1].legend(prop={"size": 7})
         st.pyplot(fig) 
-    
+        
+    # Calculates two moving averages and displays any crossovers
     def crossOver(self, delta, slow, fast):
         """MA Crossover
         ### Parameters 
         delta: days in past to get ticker data
-        slow: fast MA period
-        fast: fast EMA period
+        slow: slow MA period
+        fast: fast MA period
         ### Output
         Displays a streamlab matplotlib plot
         """
