@@ -53,4 +53,4 @@ try:
     elif taInput == 'MA Cross Over':
         chart = tm.TradingMethods(tickerInput).crossOver(delta=deltaInput, slow=maSlowInput, fast=maFastInput)
 except:
-    st.title("Error: please enter a valid ticker value or data selection")
+    st.header("Error: please enter a valid ticker value or data selection")
